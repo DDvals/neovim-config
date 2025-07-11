@@ -42,13 +42,19 @@ vim.keymap.set("n", "<C-Down>", ":resize -2<CR>", { desc = "Decrease window heig
 vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>", { desc = "Decrease window width" })
 vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", { desc = "Increase window width" })
 
+-- Move lines up/down
+vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", { desc = "Move line down" })
+vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", { desc = "Move line up" })
+vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
+vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
+
 -- =============================
 -- Functions
 -- =============================
 
--- Basic autocommands
-local augroup = vim.api.nvim_create_augroup("UserConfig", {})
-
+-- Basic autocommands
+local augroup = vim.api.nvim_create_augroup("UserConfig", {})
+
 -- Highlight yanked text
 vim.api.nvim_create_autocmd("TextYankPost", {
   group = augroup,
