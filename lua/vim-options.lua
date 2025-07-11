@@ -46,6 +46,9 @@ vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", { desc = "Increase w
 -- Functions
 -- =============================
 
+-- Basic autocommands
+local augroup = vim.api.nvim_create_augroup("UserConfig", {})
+
 -- Highlight yanked text
 vim.api.nvim_create_autocmd("TextYankPost", {
   group = augroup,
