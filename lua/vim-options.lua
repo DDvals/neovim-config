@@ -50,6 +50,21 @@ vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", { desc = "Move line up" })
 vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
 
+-- ============================================================================
+-- TABS
+-- ============================================================================
+
+-- Alternative navigation (more intuitive)
+vim.keymap.set('n', '<leader>tn', ':tabn<CR>', { desc = 'Next tab' })
+vim.keymap.set('n', '<leader>tp', ':tabp<CR>', { desc = 'Next tab' })
+vim.keymap.set('n', '<leader>tnw', ':tabnew<CR>', { desc = 'New tab' })
+vim.keymap.set('n', '<leader>tx', ':tabclose<CR>', { desc = 'Close tab' })
+
+-- Tab moving
+vim.keymap.set('n', '<leader>tm', ':tabmove<CR>', { desc = 'Move tab' })
+vim.keymap.set('n', '<leader>t>', ':tabmove +1<CR>', { desc = 'Move tab right' })
+vim.keymap.set('n', '<leader>t<', ':tabmove -1<CR>', { desc = 'Move tab left' })
+
 -- =============================
 -- Functions
 -- =============================
