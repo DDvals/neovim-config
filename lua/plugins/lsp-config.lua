@@ -11,7 +11,10 @@ return {
       require("mason-lspconfig").setup({
         ensure_installed = {
           "lua_ls",
-          "ts_ls"
+          "ts_ls",
+          "clangd",
+          "jsonls",
+          "terraformls"
         }
       })
     end
@@ -27,6 +30,15 @@ return {
       lspconfig.ts_ls.setup({
         capabilities = capabilities
       })
+      lspconfig.clangd.setup({
+        capabilities = capabilities
+      })
+      lspconfig.jsonls.setup({
+        capabilities = capabilities
+      })
+      lspconfig.terraformls.setup({
+        capabilities = capabilities
+      })
 	  
 	  vim.diagnostic.config({
 	    virtual_text = {
@@ -39,11 +51,11 @@ return {
 	    severity_sort = true,
 	  })	
 	  
-      vim.keymap.set('n', 'K', vim.lsp.buf.hover, {desc = "Popup hover"})
-      vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {desc = "Go to definition"})
-      vim.keymap.set({'n', 'v'}, '<leader>ca', vim.lsp.buf.code_action, {desc = "LSP Code Action"})
-	  vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, {desc = "Rename"})
-      vim.keymap.set('n', 'gr', vim.lsp.buf.references, {desc = "Go to references"})
+      vim.keymap.set('n', 'K', vim.lsp.buf.hover, {desc = "Popup hover"})
+      vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {desc = "Go to definition"})
+      vim.keymap.set({'n', 'v'}, '<leader>ca', vim.lsp.buf.code_action, {desc = "LSP Code Action"})
+	  vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, {desc = "Rename"})
+      vim.keymap.set('n', 'gr', vim.lsp.buf.references, {desc = "Go to references"})
     end
   }
 }
