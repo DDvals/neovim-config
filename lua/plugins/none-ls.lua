@@ -13,6 +13,6 @@ return {
 		require("none-ls.code_actions.eslint"),
       },
     })
-    vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
+    vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {desc = "LSP format"})
   end,
 }

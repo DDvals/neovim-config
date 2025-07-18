@@ -39,11 +39,11 @@ return {
 	    severity_sort = true,
 	  })	
 	  
-      vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
-      vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
-      vim.keymap.set({'n', 'v'}, '<leader>ca', vim.lsp.buf.code_action, {})
-	  vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, {})
-      vim.keymap.set('n', 'gr', vim.lsp.buf.references, {})
+      vim.keymap.set('n', 'K', vim.lsp.buf.hover, {desc = "Popup hover"})
+      vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {desc = "Go to definition"})
+      vim.keymap.set({'n', 'v'}, '<leader>ca', vim.lsp.buf.code_action, {desc = "LSP Code Action"})
+	  vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, {desc = "Rename"})
+      vim.keymap.set('n', 'gr', vim.lsp.buf.references, {desc = "Go to references"})
     end
   }
 }
