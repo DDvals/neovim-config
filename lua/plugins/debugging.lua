@@ -24,13 +24,13 @@ return {
       dapui.close()
     end
 
-    vim.keymap.set("n", "<F5>", dap.continue)
-    vim.keymap.set("n", "<F10>", dap.step_over)
-    vim.keymap.set("n", "<F11>", dap.step_into)
-    vim.keymap.set("n", "<F12>", dap.step_out)
-    vim.keymap.set("n", "<leader>b", dap.toggle_breakpoint)
+    vim.keymap.set("n", "<F5>", dap.continue, {desc = "DAP continue"})
+    vim.keymap.set("n", "<F10>", dap.step_over, {desc = "DAP step over"})
+    vim.keymap.set("n", "<F11>", dap.step_into, {desc = "DAP step into"})
+    vim.keymap.set("n", "<F12>", dap.step_out, {desc = "DAP step out"})
+    vim.keymap.set("n", "<leader>b", dap.toggle_breakpoint, {desc = "DAP toggle breakpoint"})
     vim.keymap.set("n", "<leader>B", function()
       dap.set_breakpoint(vim.fn.input("Breakpoint condition: "))
-    end)
+    end, {desc = "DAP set breakpoint condition"})
   end,
 }
