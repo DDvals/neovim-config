@@ -31,10 +31,12 @@ return {
         capabilities = capabilities
       })
       lspconfig.clangd.setup({
-        capabilities = capabilities
+        capabilities = capabilities,
+        filetypes = { "c", "h", "cpp" }
       })
       lspconfig.jsonls.setup({
-        capabilities = capabilities
+        capabilities = capabilities,
+        filetypes = { "json", "jsonc" },
       })
       lspconfig.terraformls.setup({
         capabilities = capabilities
