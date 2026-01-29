@@ -1,37 +1,37 @@
 vim.g.mapleader = " "
 
-vim.opt.number = true                              -- Line numbers
-vim.opt.relativenumber = true                      -- Relative line numbers
-vim.opt.cursorline = true                          -- Highlight current line
-vim.opt.scrolloff = 10                             -- Keep 10 lines above/below cursor 
-vim.opt.sidescrolloff = 8                          -- Keep 8 columns left/right of cursor
+vim.opt.number = true -- Line numbers
+vim.opt.relativenumber = true -- Relative line numbers
+vim.opt.cursorline = true -- Highlight current line
+vim.opt.scrolloff = 10 -- Keep 10 lines above/below cursor
+vim.opt.sidescrolloff = 8 -- Keep 8 columns left/right of cursor
 
 -- Indentation
-vim.opt.tabstop = 4                                -- Tab width
-vim.opt.shiftwidth = 4                             -- Indent width
-vim.opt.softtabstop = 4                            -- Soft tab stop
-vim.opt.expandtab = true                           -- Use spaces instead of tabs
-vim.opt.smartindent = true                         -- Smart auto-indenting
-vim.opt.autoindent = true                          -- Copy indent from current line
+vim.opt.tabstop = 4 -- Tab width
+vim.opt.shiftwidth = 4 -- Indent width
+vim.opt.softtabstop = 4 -- Soft tab stop
+vim.opt.expandtab = true -- Use spaces instead of tabs
+vim.opt.smartindent = true -- Smart auto-indenting
+vim.opt.autoindent = true -- Copy indent from current line
 
 -- Search settings
-vim.opt.ignorecase = true                          -- Case insensitive search
-vim.opt.smartcase = true                           -- Case sensitive if uppercase in search
-vim.opt.hlsearch = true                            -- Highlight search results 
-vim.opt.incsearch = true                           -- Show matches as you type
+vim.opt.ignorecase = true -- Case insensitive search
+vim.opt.smartcase = true -- Case sensitive if uppercase in search
+vim.opt.hlsearch = true -- Highlight search results
+vim.opt.incsearch = true -- Show matches as you type
 
 -- Visual settings
-vim.opt.showmatch = true                           -- Highlight matching brackets
-vim.opt.completeopt = "menuone,noinsert,noselect"  -- Completion options 
+vim.opt.showmatch = true -- Highlight matching brackets
+vim.opt.completeopt = "menuone,noinsert,noselect" -- Completion options
 
 -- File handling
-vim.opt.undofile = true                            -- Persistent undo
-vim.opt.autoread = true                            -- Auto reload files changed outside vim
+vim.opt.undofile = true -- Persistent undo
+vim.opt.autoread = true -- Auto reload files changed outside vim
 
 -- Behavior settings
-vim.opt.backspace = "indent,eol,start"             -- Better backspace behavior
-vim.opt.clipboard:append("unnamedplus")            -- Use system clipboard
-vim.opt.modifiable = true                          -- Allow buffer modifications
+vim.opt.backspace = "indent,eol,start" -- Better backspace behavior
+vim.opt.clipboard:append("unnamedplus") -- Use system clipboard
+vim.opt.modifiable = true -- Allow buffer modifications
 
 -- Normal mode mappings
 vim.keymap.set("n", "<leader>c", ":nohlsearch<CR>", { desc = "Clear search highlights" })
@@ -55,15 +55,15 @@ vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
 -- ============================================================================
 
 -- Alternative navigation (more intuitive)
-vim.keymap.set('n', '<leader>tn', ':tabn<CR>', { desc = 'Next tab' })
-vim.keymap.set('n', '<leader>tp', ':tabp<CR>', { desc = 'Next tab' })
-vim.keymap.set('n', '<leader>tnw', ':tabnew<CR>', { desc = 'New tab' })
-vim.keymap.set('n', '<leader>tx', ':tabclose<CR>', { desc = 'Close tab' })
+vim.keymap.set("n", "<leader>tn", ":tabn<CR>", { desc = "Next tab" })
+vim.keymap.set("n", "<leader>tp", ":tabp<CR>", { desc = "Next tab" })
+vim.keymap.set("n", "<leader>tnw", ":tabnew<CR>", { desc = "New tab" })
+vim.keymap.set("n", "<leader>tx", ":tabclose<CR>", { desc = "Close tab" })
 
 -- Tab moving
-vim.keymap.set('n', '<leader>tm', ':tabmove<CR>', { desc = 'Move tab' })
-vim.keymap.set('n', '<leader>t>', ':tabmove +1<CR>', { desc = 'Move tab right' })
-vim.keymap.set('n', '<leader>t<', ':tabmove -1<CR>', { desc = 'Move tab left' })
+vim.keymap.set("n", "<leader>tm", ":tabmove<CR>", { desc = "Move tab" })
+vim.keymap.set("n", "<leader>t>", ":tabmove +1<CR>", { desc = "Move tab right" })
+vim.keymap.set("n", "<leader>t<", ":tabmove -1<CR>", { desc = "Move tab left" })
 
 -- =============================
 -- Functions
@@ -74,28 +74,16 @@ local augroup = vim.api.nvim_create_augroup("UserConfig", {})
 
 -- Highlight yanked text
 vim.api.nvim_create_autocmd("TextYankPost", {
-  group = augroup,
-  callback = function()
-    vim.highlight.on_yank()
-  end,
+	group = augroup,
+	callback = function()
+		vim.highlight.on_yank()
+	end,
 })
-
--- Set filetype-specific settings
---[[ 
-vim.api.nvim_create_autocmd("FileType", {
-  group = augroup,
-  pattern = { "lua", "javascript" },
-  callback = function()
-    vim.opt_local.tabstop = 4
-    vim.opt_local.shiftwidth = 4
-  end,
-})
-]]
 
 -- Auto-resize splits when window is resized
 vim.api.nvim_create_autocmd("VimResized", {
-  group = augroup,
-  callback = function()
-    vim.cmd("tabdo wincmd =")
-  end,
+	group = augroup,
+	callback = function()
+		vim.cmd("tabdo wincmd =")
+	end,
 })
