@@ -5,6 +5,7 @@ vim.opt.relativenumber = true -- Relative line numbers
 vim.opt.cursorline = true -- Highlight current line
 vim.opt.scrolloff = 10 -- Keep 10 lines above/below cursor
 vim.opt.sidescrolloff = 8 -- Keep 8 columns left/right of cursor
+vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
 -- Indentation
 vim.opt.tabstop = 4 -- Tab width
