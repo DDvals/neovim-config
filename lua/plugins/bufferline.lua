@@ -8,6 +8,7 @@ return {
       local bufferline = require("bufferline")
       bufferline.setup({
         options = {
+          numbers = "buffer_id",  
           diagnostics = "nvim_lsp",
           diagnostics_indicator = function(count, level, diagnostics_dict, context)
             local icon = level:match("error") and " " or " "
