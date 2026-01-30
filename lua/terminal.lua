@@ -110,5 +110,7 @@ vim.keymap.set("t", "<Esc>", function()
 	if terminal_state.is_open then
 		vim.api.nvim_win_close(terminal_state.win, false)
 		terminal_state.is_open = false
+	else
+		vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<C-\\><C-n>", true, false, true), "n", true)
 	end
 end, { noremap = true, silent = true, desc = "Close floating terminal from terminal mode" })
