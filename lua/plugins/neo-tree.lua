@@ -9,11 +9,11 @@ return {
 	config = function()
 		vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal left <CR>", {})
 	end,
-	opts = {
-		use_libuv_file_watcher = true,
-		follow_current_file = { enabled = true },
+	opts = {		
 		clipboard = { sync = "global" },
 		filesystem = {
+            use_libuv_file_watcher = true,
+            follow_current_file = { enabled = true },
 			filtered_items = {
                 visible = true,
 				hide_gitignored = false,
