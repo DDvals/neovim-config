@@ -67,10 +67,14 @@ vim.keymap.set("n", "<leader>t>", ":tabmove +1<CR>", { desc = "Move tab right" }
 vim.keymap.set("n", "<leader>t<", ":tabmove -1<CR>", { desc = "Move tab left" })
 
 -- Integrated terminal
-vim.keymap.set("t", "<C-h>", [[<C-\><C-n><C-w>h]])
-vim.keymap.set("t", "<C-j>", [[<C-\><C-n><C-w>j]])
-vim.keymap.set("t", "<C-k>", [[<C-\><C-n><C-w>k]])
-vim.keymap.set("t", "<C-l>", [[<C-\><C-n><C-w>l]])
+--vim.keymap.set("t", "<C-h>", [[<C-\><C-n><C-w>h]])
+--vim.keymap.set("t", "<C-j>", [[<C-\><C-n><C-w>j]])
+--vim.keymap.set("t", "<C-k>", [[<C-\><C-n><C-w>k]])
+--vim.keymap.set("t", "<C-l>", [[<C-\><C-n><C-w>l]])
+
+-- buffers
+vim.keymap.set("n", "<C-h>", ":bp<CR>", { desc = "Previous buffer" })
+vim.keymap.set("n", "<C-l>", ":bn<CR>", { desc = "Next buffer" })
 
 -- =============================
 -- Functions
