@@ -98,3 +98,14 @@ vim.api.nvim_create_autocmd("VimResized", {
 		vim.cmd("tabdo wincmd =")
 	end,
 })
+
+if vim.g.neovide then
+	vim.o.guifont = "JetBrainsMono Nerd Font:h11"
+	vim.g.neovide_cursor_vfx_mode = ""
+	vim.g.neovide_cursor_animation_length = 0
+	vim.g.neovide_scroll_animation_length = 0
+	vim.g.neovide_cursor_trail_size = 0
+	vim.g.neovide_scale_factor = 1.0
+	vim.g.neovide_refresh_rate = 144
+	vim.g.neovide_confirm_quit = true
+end
