@@ -10,7 +10,8 @@ return {
 	},
 	{
 		"rebelot/kanagawa.nvim",
-		name = "kanagawa" --[[, priority = 1000,
+		name = "kanagawa",
+		lazy = true --[[, priority = 1000,
         config = function()
             vim.cmd.colorscheme "kanagawa"
         end
