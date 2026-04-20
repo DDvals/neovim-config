@@ -23,7 +23,7 @@ local function FloatingTerminal()
 	if not terminal_state.buf or not vim.api.nvim_buf_is_valid(terminal_state.buf) then
 		terminal_state.buf = vim.api.nvim_create_buf(false, true)
 		-- Set buffer options for better terminal experience
-		vim.api.nvim_buf_set_option(terminal_state.buf, "bufhidden", "hide")
+		vim.bo[terminal_state.buf].bufhidden = "hide"
 	end
 
 	-- Calculate window dimensions
@@ -44,14 +44,10 @@ local function FloatingTerminal()
 	})
 
 	-- Set transparency for the floating window
-	vim.api.nvim_win_set_option(terminal_state.win, "winblend", 0)
+	vim.wo[terminal_state.win].winblend = 0
 
 	-- Set transparent background for the window
-	vim.api.nvim_win_set_option(
-		terminal_state.win,
-		"winhighlight",
-		"Normal:FloatingTermNormal,FloatBorder:FloatingTermBorder"
-	)
+	vim.wo[terminal_state.win].winhighlight = "Normal:FloatingTermNormal,FloatBorder:FloatingTermBorder"
 
 	-- Define highlight groups for transparency
 	vim.api.nvim_set_hl(0, "FloatingTermNormal", { bg = "none" })

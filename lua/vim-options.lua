@@ -5,7 +5,7 @@ vim.opt.relativenumber = true -- Relative line numbers
 vim.opt.cursorline = true -- Highlight current line
 vim.opt.scrolloff = 10 -- Keep 10 lines above/below cursor
 vim.opt.sidescrolloff = 8 -- Keep 8 columns left/right of cursor
-vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+vim.opt.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
 -- Indentation
 vim.opt.tabstop = 4 -- Tab width
@@ -100,7 +100,7 @@ vim.api.nvim_create_autocmd("VimResized", {
 })
 
 if vim.g.neovide then
-	vim.o.guifont = "JetBrainsMono Nerd Font:h11"
+	vim.opt.guifont = "JetBrainsMono Nerd Font:h11"
 	vim.g.neovide_cursor_vfx_mode = ""
 	vim.g.neovide_cursor_animation_length = 0
 	vim.g.neovide_scroll_animation_length = 0

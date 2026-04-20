@@ -16,7 +16,7 @@ return {
 			require("luasnip.loaders.from_vscode").lazy_load()
 
 			local has_words_before = function()
-				if vim.api.nvim_buf_get_option(0, "buftype") == "prompt" then
+				if vim.bo[0].buftype == "prompt" then
 					return false
 				end
 				local line, col = table.unpack(vim.api.nvim_win_get_cursor(0))
