@@ -18,6 +18,12 @@ return {
 				visible = true,
 				hide_gitignored = false,
 				hide_dotfiles = false,
+                hide_hidden = false,
+                always_show = {
+                    ".gitignore",
+                    ".npmrc",
+                    ".env",
+                },
 			},
 		},
 	},
