@@ -1,3 +1,7 @@
+if (vim.env.CC == nil or vim.env.CC == "") and vim.fn.executable("zig") == 1 then
+  vim.env.CC = "zig cc"
+end
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   vim.fn.system({
