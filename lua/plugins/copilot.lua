@@ -6,10 +6,11 @@ return {
 		},
 		cmd = "Copilot",
 		event = "InsertEnter",
-		lazy = true,
+		--lazy = true,
 		config = function()
 			require("copilot").setup({
-				suggestion = { enabled = false },
+				auth_provider_url = "https://legrand.ghe.com/",
+				suggestion = { enabled = true, auto_trigger = true, debounce = 75, keymap = { accept = "<C-l>" } },
 				panel = { enabled = false },
 			})
 		end,
@@ -23,13 +24,12 @@ return {
 		end,
 	},
 	{
-		"CopilotC-Nvim/CopilotChat.nvim",
+		"olimorris/codecompanion.nvim",
+		version = "^v20.1.0",
 		dependencies = {
 			{ "nvim-lua/plenary.nvim", branch = "master" },
+			"nvim-treesitter/nvim-treesitter",
 		},
-		build = "make tiktoken",
-		opts = {
-			-- See Configuration section for options
-		},
+		opts = {},
 	},
 }
